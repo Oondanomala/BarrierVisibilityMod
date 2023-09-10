@@ -1,16 +1,17 @@
 [
   {
-    "modid": "${id}",
-    "name": "${name}",
+    "modid": "BV",
+    "name": "BarrierVisibility",
     "description": "",
     "version": "${version}",
-    "mcversion": "1.8.9",
+    "mcversion": "${mcversion}",
     "url": "",
     "updateUrl": "",
     "authorList": [
-      "Redth"
+      "Timmi6790",
+      "RedthMC",
+      "Oondanomala"
     ],
-    "credits": "",
     "logoFile": "",
     "screenshots": [],
     "dependencies": []
