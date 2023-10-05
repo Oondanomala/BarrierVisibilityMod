@@ -23,8 +23,8 @@ public class Config {
         this.visibleBarrierBlocks = this.configuration.getBoolean(
                 "visibleBarrierBlocks",
                 Configuration.CATEGORY_GENERAL,
-                false,
-                ""
+                true,
+                "Makes barrier blocks visible"
         );
 
         this.cache.setVisibleBarrier(this.visibleBarrierBlocks);

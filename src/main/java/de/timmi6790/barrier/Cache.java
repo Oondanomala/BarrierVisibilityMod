@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class Cache {
-    private boolean visibleBarrier = false;
+    private boolean visibleBarrier = true;
 }
