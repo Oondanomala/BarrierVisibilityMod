@@ -1,4 +1,4 @@
-package de.timmi6790.barrier.mixins;
+package me.oondanomala.barriervisibility.mixins;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.spongepowered.asm.launch.MixinBootstrap;
@@ -31,7 +31,7 @@ public class MixinLoader implements IFMLLoadingPlugin {
     }
 
     @Override
-    public void injectData(final Map<String, Object> data) {
+    public void injectData(Map<String, Object> data) {
     }
 
     @Override

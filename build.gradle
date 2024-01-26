@@ -27,8 +27,8 @@ apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '2.0.2'
-group = 'de.timmi6790.barrier'
+version = '2.1.0'
+group = 'me.oondanomala.BarrierVisibility'
 archivesBaseName = 'BarrierVisibility'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -45,9 +45,6 @@ dependencies {
         exclude module: 'commons-io'
         exclude module: 'log4j-core'
     }
-
-    compileOnly 'org.projectlombok:lombok:1.18.18'
-    annotationProcessor 'org.projectlombok:lombok:1.18.12'
 }
 
 minecraft {
@@ -106,7 +103,7 @@ jar {
             'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
             'FMLCorePluginContainsFMLMod': "true",
             'ForceLoadAsMod': 'true',
-            'FMLCorePlugin': 'de.timmi6790.barrier.mixins.MixinLoader'
+            'FMLCorePlugin': 'me.oondanomala.barriervisibility.mixins.MixinLoader'
     )
 }
 
