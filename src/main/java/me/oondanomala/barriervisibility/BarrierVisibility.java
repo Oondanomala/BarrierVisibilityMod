@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 public class BarrierVisibility {
     public static final String MODID = "BV";
     public static final String NAME = "BarrierVisibility";
-    public static final String VERSION = "2.1.0";
+    public static final String VERSION = "2.2.0";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
     public static Config config;
 
