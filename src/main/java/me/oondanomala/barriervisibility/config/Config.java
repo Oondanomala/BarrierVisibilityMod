@@ -10,7 +10,8 @@ import java.io.File;
 public class Config {
     public final Configuration configuration;
     public boolean visibleBarrierBlocks;
-    public boolean initialVisibleBarrierBlocks;
+    public boolean enableKeybind;
+    private boolean initialVisibleBarrierBlocks;
 
     public Config(File configFile) {
         configuration = new Configuration(configFile);
@@ -24,6 +25,12 @@ public class Config {
                 Configuration.CATEGORY_CLIENT,
                 true,
                 "Whether to default to showing barriers or not when launching the game."
+        );
+        enableKeybind = configuration.getBoolean(
+                "Enable Barrier Keybind",
+                Configuration.CATEGORY_CLIENT,
+                true,
+                "Whether to add a keybind to toggle showing barriers."
         );
 
         // Remove old settings

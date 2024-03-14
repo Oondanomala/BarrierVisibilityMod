@@ -1,12 +1,12 @@
 package me.oondanomala.barriervisibility;
 
-import me.oondanomala.barriervisibility.command.BarrierCommand;
 import me.oondanomala.barriervisibility.config.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -37,10 +37,26 @@ public class BarrierVisibility {
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(config);
         ClientCommandHandler.instance.registerCommand(new BarrierCommand());
+        if (config.enableKeybind) {
+            BarrierKeybind barrierKeybind = new BarrierKeybind();
+            MinecraftForge.EVENT_BUS.register(barrierKeybind);
+            ClientRegistry.registerKeyBinding(barrierKeybind.keybind);
+        }
+    }
+
+    public static void toggleBarriers() {
+        config.visibleBarrierBlocks = !config.visibleBarrierBlocks;
+        if (config.visibleBarrierBlocks) {
+            showChatMessage("Barrier blocks are now visible.");
+        } else {
+            showChatMessage("We are back to normal.");
+        }
+        // Reload all blocks
+        Minecraft.getMinecraft().renderGlobal.loadRenderers();
     }
 
     public static void showChatMessage(String message) {
         if (Minecraft.getMinecraft().thePlayer == null) return;
-        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.GRAY + "[" + EnumChatFormatting.BLUE + EnumChatFormatting.BOLD + BarrierVisibility.NAME + EnumChatFormatting.GRAY + "] " + message));
+        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(EnumChatFormatting.GRAY + "[" + EnumChatFormatting.BLUE + EnumChatFormatting.BOLD + NAME + EnumChatFormatting.GRAY + "] " + message));
     }
 }
