@@ -42,7 +42,7 @@ minecraft {
 
 configurations {
     shade
-    compile.extendsFrom(shade)
+    implementation.extendsFrom(shade)
 }
 
 dependencies {
