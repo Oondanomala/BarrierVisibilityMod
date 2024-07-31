@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.gameevent.InputEvent;
 import org.lwjgl.input.Keyboard;
 
 public class BarrierKeybind {
-    public KeyBinding keybind;
+    public final KeyBinding keybind;
 
     public BarrierKeybind() {
         keybind = new KeyBinding("Toggle Barriers", Keyboard.KEY_NONE, "key.categories.misc");
@@ -14,6 +14,13 @@ public class BarrierKeybind {
 
     @SubscribeEvent
     public void onKeyInput(InputEvent.KeyInputEvent event) {
+        if (keybind.isPressed()) {
+            BarrierVisibility.toggleBarriers();
+        }
+    }
+
+    @SubscribeEvent
+    public void onMouseInput(InputEvent.MouseInputEvent event) {
         if (keybind.isPressed()) {
             BarrierVisibility.toggleBarriers();
         }
