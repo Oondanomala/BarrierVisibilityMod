@@ -18,4 +18,11 @@ public class BarrierKeybind {
             BarrierVisibility.toggleBarriers();
         }
     }
+
+    @SubscribeEvent
+    public void onMouseInput(InputEvent.MouseInputEvent event) {
+        if (keybind.isPressed()) {
+            BarrierVisibility.toggleBarriers();
+        }
+    }
 }
