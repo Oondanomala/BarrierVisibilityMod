@@ -11,7 +11,7 @@ import java.util.Set;
 @Mixin(BlockStateMapper.class)
 public abstract class MixinBlockStateMapper {
     @Redirect(method = "putAllStateModelLocations", at = @At(value = "INVOKE", target = "Ljava/util/Set;contains(Ljava/lang/Object;)Z"))
-    public boolean getRenderType(Set instance, Object o) {
+    public boolean getRenderType(Set<?> instance, Object o) {
         return o != Blocks.barrier && instance.contains(o);
     }
 }
