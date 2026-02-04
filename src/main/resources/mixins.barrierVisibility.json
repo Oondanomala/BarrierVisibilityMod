@@ -3,8 +3,7 @@
   "refmap": "mixins.barrierVisibility.refmap.json",
   "package": "me.oondanomala.barriervisibility.mixins",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [
-  ],
+  "minVersion": "0.7",
   "client": [
     "MixinBlockBarrier",
     "MixinBlockStateMapper",
