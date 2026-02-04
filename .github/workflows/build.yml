@@ -1,0 +1,47 @@
+name: "Build Mod"
+
+on:
+  push:
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
+      - ".gitignore"
+      - ".editorconfig"
+  pull_request:
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
+      - ".gitignore"
+      - ".editorconfig"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: "Build Mod"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout source"
+        uses: actions/checkout@v6
+
+      - name: "Setup Java"
+        uses: actions/setup-java@v5
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: "Setup Gradle"
+        uses: gradle/actions/setup-gradle@v5
+        with:
+          add-job-summary: "on-failure"
+
+      - name: "Build"
+        run: ./gradlew --no-daemon build
+
+      - name: "Upload built mod JAR"
+        uses: actions/upload-artifact@v6
+        with:
+          name: build
+          path: build/libs/*.jar
+          if-no-files-found: error
