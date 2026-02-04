@@ -1,10 +1,10 @@
 [
   {
-    "modid": "BV",
-    "name": "BarrierVisibility",
+    "modid": "${modID}",
+    "name": "${modName}",
     "description": "Makes barriers visible.",
     "version": "${version}",
-    "mcversion": "${mcversion}",
+    "mcversion": "${mcVersion}",
     "url": "https://github.com/Oondanomala/BarrierVisibilityMod",
     "updateUrl": "",
     "authorList": [
