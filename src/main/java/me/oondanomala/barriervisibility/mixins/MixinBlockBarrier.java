@@ -23,7 +23,7 @@ public abstract class MixinBlockBarrier extends Block {
 
     @Inject(method = "getRenderType", at = @At("HEAD"), cancellable = true)
     public void getRenderType(CallbackInfoReturnable<Integer> cir) {
-        if (BarrierVisibility.config.visibleBarrierBlocks) {
+        if (BarrierVisibility.enabled) {
             cir.setReturnValue(3);
         }
     }

@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MixinWorldClient {
     @Inject(method = "doVoidFogParticles", at = @At("HEAD"), cancellable = true)
     public void getRenderType(CallbackInfo ci) {
-        if (BarrierVisibility.config.visibleBarrierBlocks) {
+        if (BarrierVisibility.enabled) {
             ci.cancel();
         }
     }

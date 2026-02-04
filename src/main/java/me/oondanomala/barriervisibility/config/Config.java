@@ -9,14 +9,13 @@ import java.io.File;
 
 public class Config {
     public final Configuration configuration;
-    public boolean visibleBarrierBlocks;
     public boolean enableKeybind;
     private boolean initialVisibleBarrierBlocks;
 
     public Config(File configFile) {
         configuration = new Configuration(configFile);
         loadConfiguration();
-        visibleBarrierBlocks = initialVisibleBarrierBlocks;
+        BarrierVisibility.enabled = initialVisibleBarrierBlocks;
     }
 
     public void loadConfiguration() {

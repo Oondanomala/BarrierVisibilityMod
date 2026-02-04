@@ -28,6 +28,14 @@ public class BarrierVisibility {
     public static final Logger LOGGER = LogManager.getLogger(NAME);
     public static Config config;
 
+    /**
+     * Whether the mod is enabled and
+     * barriers are currently visible.<br>
+     * <tt>true</tt> if they should be visible,
+     * <tt>false</tt> otherwise.
+     */
+    public static boolean enabled = false;
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         config = new Config(event.getSuggestedConfigurationFile());
@@ -45,8 +53,8 @@ public class BarrierVisibility {
     }
 
     public static void toggleBarriers() {
-        config.visibleBarrierBlocks = !config.visibleBarrierBlocks;
-        if (config.visibleBarrierBlocks) {
+        enabled = !enabled;
+        if (enabled) {
             showChatMessage("Barrier blocks are now visible.");
         } else {
             showChatMessage("We are back to normal.");
