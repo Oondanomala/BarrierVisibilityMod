@@ -4,9 +4,9 @@
   "package": "me.oondanomala.barriervisibility.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinBlockBarrier"
   ],
   "client": [
+    "MixinBlockBarrier",
     "MixinBlockStateMapper",
     "MixinWorldClient"
   ]
