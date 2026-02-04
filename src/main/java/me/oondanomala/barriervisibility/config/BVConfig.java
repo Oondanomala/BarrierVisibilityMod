@@ -15,7 +15,7 @@ public class BVConfig extends GuiConfig {
                 false,
                 true,
                 GuiConfig.getAbridgedConfigPath(BarrierVisibility.config.configuration.toString()),
-                "BarrierVisibility Config"
+                BarrierVisibility.NAME + " Config"
         );
     }
 }
