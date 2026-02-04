@@ -1,5 +1,18 @@
-# Project exclude paths
-/.gradle/
+# Gradle
+.gradle
+build/
+!**/src/main/**/build/
+
+# IDEs
 /.idea/
-/build/
+*.ipr
+*.iws
+*.iml
+/.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Minecraft
 /run/
