@@ -1,8 +1,8 @@
 plugins {
     idea
     java
-    id("gg.essential.loom") version "1.10.+"
-    id("com.gradleup.shadow") version "9.2.+"
+    id("gg.essential.loom") version "1.15.+"
+    id("com.gradleup.shadow") version "9.4.+"
 }
 
 val modID: String by project
@@ -61,7 +61,7 @@ dependencies {
     mappings("de.oceanlabs.mcp:mcp_stable:22-1.8.9")
     forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
 
-    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.2.1")
+    runtimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.2.1")
     shade("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
         isTransitive = false
     }
