@@ -62,6 +62,7 @@ dependencies {
     forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
 
     runtimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.2.1")
+        ?.because("Allows authenticating into a Minecraft account in dev")
     shade("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
         isTransitive = false
     }
