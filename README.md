@@ -9,4 +9,4 @@ Now with 100% less OneConfig!
 ## Features
 - Being able to see barrier blocks as normal blocks (`/barrier`)
 - Keybind to quickly toggle barrier visibility (unset by default)
-- Customizable barrier texture (`textures/blocks/barrier`)
+- Customizable barrier texture (`textures/blocks/barrier.png`)
