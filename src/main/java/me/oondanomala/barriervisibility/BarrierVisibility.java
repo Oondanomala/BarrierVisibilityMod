@@ -18,6 +18,7 @@ import org.apache.logging.log4j.Logger;
         name = BarrierVisibility.NAME,
         version = BarrierVisibility.VERSION,
         acceptedMinecraftVersions = "1.8.9",
+        acceptableRemoteVersions = "*",
         clientSideOnly = true,
         guiFactory = "me.oondanomala.barriervisibility.config.GuiFactory"
 )
